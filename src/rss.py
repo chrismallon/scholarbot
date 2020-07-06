@@ -12,12 +12,13 @@ class RSS:
         self.rss = PyRSS2Gen.RSS2(
             title=self.title,
             description='An RSS feed from google scholar.',
-            link=self.out,
+            link=r'https://www.notalink.com/rss',
             lastBuildDate=datetime.datetime.now(),
 
             items = [PyRSS2Gen.RSSItem(
                 title=p.title,
-                link=p.link
+                link=p.link,
+                guid=p.link
             ) for p in self.papers]
         )
 
